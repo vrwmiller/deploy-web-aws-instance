@@ -36,6 +36,7 @@
         path: "/var/log/nginx/{{ domain }}"
       tags:
         - all
+        - config
 
     - name: Copy nginx.conf
       copy:
@@ -46,6 +47,7 @@
         mode: '0644'
       tags:
         - all
+        - config
 
     - name: Template domain config
       template:
@@ -56,6 +58,7 @@
         mode: '0644'
       tags:
         - all
+        - config
 
     - name: Setup filesystem for git repo
       file:
@@ -85,6 +88,7 @@
         - all
         - deployweb
         - restartweb
+        - config
 
   handlers:
     - name: Reboot

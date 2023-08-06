@@ -1,5 +1,6 @@
 ansible/inventory/group_vars/
 ansible/inventory/aws_ec2.yml
+ansible/roles/
 terraform/.terraform
 terraform/.terraform.lock.hcl
 terraform/.terraform*
