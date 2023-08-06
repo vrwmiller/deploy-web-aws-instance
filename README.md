@@ -1,4 +1,4 @@
-# deploy-web-aws-nolb
+# deploy-web-aws-instance
 
 Deploy a single instane website to AWS
 
