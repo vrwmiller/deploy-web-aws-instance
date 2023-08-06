@@ -15,6 +15,7 @@
       tags:
         - all
         - update
+
     - name: Install/update packages
       yum:
         name: "{{ item }}"
@@ -29,6 +30,33 @@
         - update
       notify: Reboot
 
+    - name: Create nginx log directory
+      file:
+        state: directory
+        path: "/var/log/nginx/{{ domain }}"
+      tags:
+        - all
+
+    - name: Copy nginx.conf
+      copy:
+        src: files/nginx.conf
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: '0644'
+      tags:
+        - all
+
+    - name: Template domain config
+      template:
+        src: templates/domain.conf
+        dest: /etc/nginx/conf.d/{{ domain }}.conf
+        owner: root
+        group: root
+        mode: '0644'
+      tags:
+        - all
+
     - name: Setup filesystem for git repo
       file:
         state: absent
@@ -36,6 +64,7 @@
       tags:
         - all
         - deployweb
+
     - name: Clone git repo
       git:
         repo: '{{ siterepo }}'
