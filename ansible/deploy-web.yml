@@ -80,10 +80,8 @@
         - deployweb
 
     - name: Restart nginx
-      service:
-        name: nginx
-        enabled: yes
-        state: restarted
+      command: echo "Notify nginx handler"
+      notify: "restart nginx"
       tags:
         - all
         - deployweb
@@ -91,5 +89,9 @@
         - config
 
   handlers:
+
     - name: Reboot
       reboot:
+
+    - name: restart nginx
+      service: name=nginx state=restarted
