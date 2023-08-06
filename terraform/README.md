@@ -44,3 +44,15 @@ variable "instance_name" {
 cd terraform
 tf show
 ```
+
+* Describe plan to deploy infrastructure
+
+```
+tf plan
+```
+
+* Deploy a plan
+
+```
+tf apply
+```
