@@ -51,7 +51,7 @@
 
     - name: Template domain config
       template:
-        src: templates/domain.conf
+        src: templates/domain.conf.j2
         dest: /etc/nginx/conf.d/{{ domain }}.conf
         owner: root
         group: root
