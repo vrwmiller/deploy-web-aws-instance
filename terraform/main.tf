@@ -103,3 +103,18 @@ data "aws_ami" "latest-amzn2" {
     values = ["hvm"]
   }
 }
+
+data "aws_ami" "al2023-ami" {
+  most_recent = true
+  owners = ["137112412989"]
+
+  filter {
+    name   = "name"
+    values = ["al2023-ami*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
