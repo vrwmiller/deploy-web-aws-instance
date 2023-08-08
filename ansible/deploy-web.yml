@@ -70,11 +70,11 @@
 
     - name: Clone git repo
       git:
-        repo: '{{ siterepo }}'
+        repo: '{{ repo }}'
         dest: "{{ docroot }}"
         accept_hostkey: yes
         single_branch: yes
-        version: master
+        version: "{{ repobranch }}"
       tags:
         - all
         - deployweb
