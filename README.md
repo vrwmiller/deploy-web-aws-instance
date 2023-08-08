@@ -25,7 +25,8 @@ tf show
 
 ## Variables
 
-* siterepo: URL to the Git repo for the website
+* repo: URL to the Git repo for the website
+* repobranch: The branch on repo to checkout
 * domain: the website domain
 
 ## Playbooks
