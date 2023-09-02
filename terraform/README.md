@@ -8,7 +8,7 @@ Deploy a website on an AWS instance
 
 Define the following variables in variables.tf where CIDR is an IP and netmask
 
-```
+```tf
 $ cat variables.tf 
 variable "selfa" {
   description = "IP1"
@@ -40,19 +40,19 @@ variable "instance_name" {
 
 * Describe current infrastructure
 
-```
+```shell
 cd terraform
 tf show
 ```
 
 * Describe plan to deploy infrastructure
 
-```
+```shell
 tf plan
 ```
 
 * Deploy a plan
 
-```
+```shell
 tf apply
 ```
