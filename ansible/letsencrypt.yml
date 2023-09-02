@@ -1,6 +1,7 @@
 ---
-- hosts: temple
-  become: yes
+- name: Let's Encrypt
+  hosts: temple
+  become: true
   become_user: "{{ becomeuser }}"
 
   tasks:
@@ -27,8 +28,8 @@
     - name: Check OpenSSL certificate dates
       command:
         cmd: openssl x509 -in {{ openssl_cert }} -dates -noout
-      #openssl_certificate_info:
-      #  path: {{ openssl_cert }}
+      # openssl_certificate_info:
+      # path: {{ openssl_cert }}
       register: result
       tags:
         - enroll
