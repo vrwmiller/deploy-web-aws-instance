@@ -3,7 +3,7 @@
 - name: AWS Web Setup
   hosts: tag_Name_hostileadminweb
   user: "{{ clouduser }}"
-  become: yes
+  become: true
   become_user: "{{ becomeuser }}"
 
   tasks:
@@ -72,8 +72,8 @@
       git:
         repo: '{{ repo }}'
         dest: "{{ docroot }}"
-        accept_hostkey: yes
-        single_branch: yes
+        accept_hostkey: true
+        single_branch: true
         version: "{{ repobranch }}"
       tags:
         - all
