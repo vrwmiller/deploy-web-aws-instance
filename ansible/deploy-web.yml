@@ -63,7 +63,7 @@
     - name: Setup filesystem for git repo
       file:
         state: absent
-        path: "{{ docroot  }}"
+        path: "{{  docroot  }}"
       tags:
         - all
         - deployweb
