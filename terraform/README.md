@@ -2,8 +2,6 @@
 
 Deploy a website on an AWS instance
 
-# Terraform
-
 ## Variables
 
 Define the following variables in variables.tf where CIDR is an IP and netmask
